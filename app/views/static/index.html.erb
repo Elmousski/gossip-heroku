@@ -1,0 +1,13 @@
+<h1> Bienvenue sur la Home </h1>
+
+<p>Voici la liste des potins :</p>
+
+<% @les_gossips.each_with_index do |un_gossip, index| %>
+<div class="card">
+  <h5 class="card-header"><%= un_gossip.author %></h5>
+  <div class="card-body">
+    <p class="card-text"><%= un_gossip.content %></p>
+    <%= link_to "Voir la page dédiée du potin", page_dediee_path(index+1)%>
+  </div>
+</div>
+<% end %>
